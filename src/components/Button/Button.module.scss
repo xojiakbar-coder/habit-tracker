@@ -3,7 +3,7 @@
   min-height: 32px;
   border: none;
   transition: all linear 170ms;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 15px;
   padding: 0 18px;
 
@@ -45,7 +45,7 @@
 
   // md
   &[data-size="md"] {
-    height: 42px;
+    height: 44px;
     font-size: 15px;
     padding: 0 16px;
   }
@@ -102,13 +102,13 @@
 
   // outline
   &[data-variant="outline"] {
-    color: var(--color-white);
-    background-color: transparent;
-    border: 1px solid var(--color-gray-400);
+    color: var(--mantine-color-default-color);
+    background-color: var(--mantine-color-default);
+    border: calc(0.0625rem * var(--mantine-scale)) solid
+      var(--mantine-color-default-border);
 
     &:hover {
-      border: 1px solid var(--color-gray-400);
-      background-color: var(--color-gray-900);
+      background-color: var(--mantine-color-default-hover);
     }
   }
 
@@ -246,8 +246,7 @@
   // 🔹 Responsive tweaks
   @media (max-width: 768px) {
     font-size: 16px;
-    padding: 0 19px;
-    min-height: 51px;
+    padding: 0 14px;
 
     &[data-size="lg"],
     &[data-size="xl"] {
