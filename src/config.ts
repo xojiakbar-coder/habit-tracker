@@ -1,8 +1,8 @@
 const config = {
   language: {
     key: "language",
-    initial: "uz",
-    list: ["uz", "ru", "oz"],
+    initial: "en",
+    list: ["uz", "en"],
   },
   support: {
     gmail: "xojiakbarisroilov1001@gmail.com",

@@ -15,6 +15,8 @@ const theme: MantineThemeOverride = createTheme({
   fontFamily: "Lato, sans-serif",
   primaryShade: 7,
   primaryColor: "blue",
+  white: "#fff",
+  black: "#000",
   headings: {
     fontWeight: "700",
   },
