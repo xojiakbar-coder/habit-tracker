@@ -6,6 +6,7 @@ import {
 import { useMemo } from "react";
 import { Toaster } from "sonner";
 import { I18nextProvider } from "react-i18next";
+import { ModalsProvider } from "@mantine/modals";
 import { instance as i18n } from "@/core/services/i18n";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -31,10 +32,12 @@ function App() {
 
   return (
     <MantineProvider theme={theme} defaultColorScheme="light">
-      <I18nextProvider i18n={i18n}>
-        <Toaster richColors />
-        <RouterProvider router={router} />
-      </I18nextProvider>
+      <ModalsProvider>
+        <I18nextProvider i18n={i18n}>
+          <Toaster richColors />
+          <RouterProvider router={router} />
+        </I18nextProvider>
+      </ModalsProvider>
     </MantineProvider>
   );
 }

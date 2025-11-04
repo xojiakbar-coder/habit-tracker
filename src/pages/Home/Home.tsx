@@ -1,26 +1,23 @@
-import { storage } from "@/core/services";
-import { Title } from "@mantine/core";
-import { useEffect } from "react";
-import { toast } from "sonner";
+import { Register } from "@/pages/Register";
+import { Space, Title } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
 import styles from "./Home.module.scss";
+import { Button } from "@/components/Button";
 
 const Home = () => {
-  const userName = storage.local.get("username");
-
-  useEffect(() => {
-    if (!userName) {
-      toast.error("Your username is undefined", {
-        position: "top-center",
-      });
-    }
-  }, [userName]);
+  const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <div className={styles.container}>
       <Title order={1} className={styles.userName}>
-        Welcome {userName || "🤷"}
+        Welcome {"User 🤷"}
       </Title>
+
+      <Space h="md" />
+      <Button content="Register" onClick={open} />
+
+      <Register opened={opened} close={close} />
     </div>
   );
 };
